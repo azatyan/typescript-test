@@ -1,0 +1,23 @@
+<h1>
+  {{title}}
+</h1>
+
+<ul>
+  <li *ngFor="let item of comments">
+    <p>
+      {{item}}
+    </p>
+  </li>
+</ul>
+<h3>
+  New Comment
+</h3>
+<textarea rows="4" cols="100" [(ngModel)]="new_comment"></textarea>
+<br />
+<button (click)="addComment(new_comment)">Add comment</button>
+
+
+<h4>
+  Bad words, separated by comma
+</h4>
+<input [(ngModel)]="negative_words" (change)="filterComments()" />
